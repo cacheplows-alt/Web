@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cache Cow Snow Plows | Logan, Utah</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/images/icon_snowflake.png">
+</head>
+
+<body>
+    <canvas id="snow-canvas"></canvas>
+
+    <header></header> <!-- Injected via components.js -->
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>We Clear The Way</h1>
+            <p>Reliable, 24/7 snow removal for Logan and Cache Valley. Don't get stuck this winter.</p>
+
+            <!-- Hero Actions Container for Vertical Alignment -->
+            <div class="hero-actions"
+                style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem; margin-top: 2rem;">
+                <a href="services.html" class="btn">View Services</a>
+                <div style="background: rgba(0,0,0,0.8); padding: 1rem; border-radius: 8px;">
+                    <span id="weather-display" class="weather-mock"
+                        style="display: flex; align-items: center; gap: 0.5rem;">
+                        <img src="assets/images/icon_snowflake.png" style="height: 24px;"> Loading Weather...
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Professional grade equipment to do the job right.</p>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <h3>Commercial Lots</h3>
+                    <p>Keep your business open and safe. Salting and de-icing included.</p>
+                </div>
+                <div class="card">
+                    <h3>Residential Plowing</h3>
+                    <p>Driveways and walkways cleared so you don't have to. Monthly contracts available.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Emergency Removal</h3>
+                    <p>Stuck? We offer 24/7 emergency dig-out services.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="services.html" class="btn btn-secondary"
+                    style="border-color: var(--primary); color: var(--primary);">Full Service List</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--primary); color: var(--text-light);">
+        <div class="container">
+            <div class="grid" style="align-items: center;">
+                <div>
+                    <h2>About Cache Cow</h2>
+                    <p style="margin-bottom: 2rem; opacity: 0.9;">
+                        We know a thing or two about harsh Utah winters. We started with one truck and a dream
+                        to keep our community safe and accessible.
+                    </p>
+                    <a href="about.html" class="btn">Meet the Herd</a>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 12px;">
+                    <h3>Why Choose Us?</h3>
+                    <ul style="list-style: none; margin-top: 1rem;">
+                        <li style="margin-bottom: 0.5rem;"> Licensed & Insured</li>
+                        <li style="margin-bottom: 0.5rem;"> Local Logan Crew</li>
+                        <li style="margin-bottom: 0.5rem;"> SMS Updates</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer></footer> <!-- Injected via components.js -->
+
+    <script src="components.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
