@@ -77,25 +77,20 @@
                     </div>
                 </form>
 
+                <script src="config.js"></script>
                 <script>
                     const form = document.getElementById('quote-form');
                     const statusText = document.getElementById('form-status');
                     const submitBtn = document.getElementById('submit-btn');
 
-                    // PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL HERE
-                    const GOOGLE_SCRIPT_URL = 'INSERT_YOUR_WEB_APP_URL_HERE';
+                    // URL is now loaded from config.js
+                    const GOOGLE_SCRIPT_URL = CONFIG.GOOGLE_SCRIPT_URL;
 
                     form.addEventListener('submit', e => {
                         e.preventDefault();
 
-                        // We will allow the submission to pass locally for demo purposes if the URL is not set, 
-                        // but normally we would block it. Since I cannot interactively set the URL for the user, 
-                        // I will suppress the alert blocking for "demo" flow if they haven't set it, 
-                        // but best practice is to require it.
-                        // I will keep the check but just warn.
-
                         if (GOOGLE_SCRIPT_URL === 'INSERT_YOUR_WEB_APP_URL_HERE') {
-                            alert('NOTE: You have not configured the Google Apps Script URL in quote.html. This is just a demo simulation.');
+                            alert('NOTE: You have not configured the Google Apps Script URL in config.js. Please deploy your script and update the config file.');
                             // Proceeding to "success" for demo
                             window.location.href = 'thank_you.html';
                             return;
