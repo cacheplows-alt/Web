@@ -175,12 +175,6 @@ nav {
     display: inline-block;
 }
 
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-}
-
 /* Features/Services Preview */
 .section {
     padding: 5rem 0;
@@ -206,19 +200,6 @@ nav {
 .about-hero {
     grid-template-columns: 1fr 1fr;
     align-items: center;
-}
-
-@media (max-width: 768px) {
-    .about-hero {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .about-image-container {
-        order: -1;
-        width: 100%;
-        margin-bottom: 2rem;
-    }
 }
 
 .card {
@@ -261,30 +242,6 @@ footer {
 .burger {
     display: none;
     cursor: pointer;
-}
-
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: var(--primary);
-        padding: 2rem;
-        text-align: center;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .burger {
-        display: block;
-        color: white;
-        font-size: 1.5rem;
-    }
 }
 
 /* Form Styles */
@@ -333,4 +290,50 @@ textarea.form-control {
     width: 64px;
     object-fit: contain;
     margin-bottom: 1rem;
+}
+
+/* --- MEDIA QUERIES --- */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    /* About Page Mobile Fix - Bulletproof */
+    .about-hero {
+        display: flex !important;
+        flex-direction: column-reverse !important;
+    }
+
+    .about-image-container {
+        width: 100% !important;
+        margin-bottom: 2rem;
+    }
+
+    /* Mobile Nav Fix - Bulletproof */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--primary);
+        padding: 2rem;
+        text-align: center;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .burger {
+        display: block;
+        color: white;
+        font-size: 1.8rem;
+        z-index: 1001;
+        /* Ensure above everything */
+        padding: 0.5rem;
+        /* Larger touch target */
+    }
 }

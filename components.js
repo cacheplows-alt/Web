@@ -52,9 +52,28 @@ function injectComponents() {
         // Mobile Nav Toggle Logic
         const burger = headerPlaceholder.querySelector('.burger');
         const nav = headerPlaceholder.querySelector('.nav-links');
+
+        console.log('Mobile Nav Init:', { burger: !!burger, nav: !!nav }); // Debug
+
         if (burger && nav) {
-            burger.addEventListener('click', () => {
+            burger.addEventListener('click', (e) => {
+                console.log('Burger clicked'); // Debug
+                e.stopPropagation(); // Prevent bubbling issues
                 nav.classList.toggle('active');
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (nav.classList.contains('active') && !nav.contains(e.target) && !burger.contains(e.target)) {
+                    nav.classList.remove('active');
+                }
+            });
+
+            // Close menu when clicking a link
+            nav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('active');
+                });
             });
         }
     }
