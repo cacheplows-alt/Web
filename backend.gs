@@ -25,7 +25,7 @@ function doPost(e) {
     
     // Create headers if the sheet is empty
     if (sheet.getLastRow() === 0) {
-      sheet.appendRow(["Timestamp", "Name", "Phone", "Address", "Service Type", "Size", "Details"]);
+      sheet.appendRow(["Timestamp", "Name", "Phone", "Email", "Address", "Service Type", "Size", "Details"]);
     }
 
     // Append the new quote request
@@ -33,6 +33,7 @@ function doPost(e) {
       new Date(),
       data.name,
       data.phone,
+      data.email,
       data.address,
       data.serviceType,
       data.size,
@@ -47,6 +48,7 @@ function doPost(e) {
       
       Name: ${data.name}
       Phone: ${data.phone}
+      Email: ${data.email}
       Address: ${data.address}
       Service: ${data.serviceType}
       Size: ${data.size}
